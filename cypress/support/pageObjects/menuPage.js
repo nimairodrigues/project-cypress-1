@@ -6,7 +6,7 @@ class MenuPage {
 
     //Método para acessar as opções do menu recebendo o nome da opção
     acessarOpcaoMenu(opcao) {
-        cy.get("[class='oxd-main-menu-item'] span:contains("+opcao+")").click()
+        cy.get("[class='oxd-main-menu-item-wrapper'] span:contains("+opcao+")").click()
         cy.get('[class="oxd-layout-context"]').should('be.visible')
     }
 
