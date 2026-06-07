@@ -1,5 +1,5 @@
 // Importa os steps do Cucumber pro Cypress (Given, When, Then)
-import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
+import { Given, When, Then, And } from 'cypress-cucumber-preprocessor/steps'
 
 //Importando page para a classe de testes
 import loginPage from '../../../support/pageObjects/loginPage'

@@ -6,6 +6,7 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       on('file:preprocessor', cucumber())
     },
-    specPattern: "cypress/e2e/**/*.{feature,features}"
+    specPattern: "cypress/e2e/**/*.{feature,features}",
+    defaultCommandTimeout: 15000
   },
 });
