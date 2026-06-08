@@ -57,8 +57,20 @@ Feature: Claim
     And selecionar o status ""
     And clicar no botão de buscar
     Then deve aparecer no resultado apenas o que estiver relacionado com o status selecionado
-
-  Scenario: CT8: Contador de Registros Encontrados.
+  
+  Scenario: CT8: Funcionalidade botão de criar reclamação
     Given Eu estou logado no sistema
     And Estou na tela de dashboard
     When Eu clicar em "Claim" na barra de menu
+    And clicar no botão de atribuir reclamação
+    Then deve ser redirecionado para a tela de criação de reclamação
+    And deve mostrar o formulário de criação de reclamação
+  
+  Scenario: CT9: Validação de Busca sem Resultados.
+    Given Eu estou logado no sistema
+    And Estou na tela de dashboard
+    When Eu clicar em "Claim" na barra de menu
+    And digito no campo de data final "2000-01-01"
+    And clicar no botão de buscar
+    Then deve mostrar uma toast indicando que não foram encontrados resultados para os critérios de busca
+    And deve aparecer nos resultados mensagem indicando que não foram encontrados resultados

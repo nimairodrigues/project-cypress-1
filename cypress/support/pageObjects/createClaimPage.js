@@ -44,6 +44,17 @@ class createClaimPage {
         this.selectCurrency(currencyName)
         this.clickCreateButton()
     }
+
+    verifyUrl() {
+        cy.url().should('include', '/web/index.php/claim/assignClaim')
+    }
+
+    verifyFormVisible() {
+        cy.get('[class="oxd-autocomplete-text-input oxd-autocomplete-text-input--active"]').should('be.visible')
+        cy.get('[class="oxd-form-row"] [class="oxd-grid-item oxd-grid-item--gutters"]:eq(1)').should('be.visible')
+        cy.get('[class="oxd-form-row"] [class="oxd-grid-item oxd-grid-item--gutters"]:eq(2)').should('be.visible')
+        cy.get('.oxd-button--secondary').should('be.visible')
+    }
 }
 
 export default new createClaimPage()
