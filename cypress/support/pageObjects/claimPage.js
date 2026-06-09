@@ -47,7 +47,6 @@ class ClaimPage {
 
 
     clickSearch() {
-        //TODO cada vez que clicar no search, tem que esperar a resposta da requisição de busca para só então clicar no search novamente caso queira fazer outra busca, ou clicar no reset para limpar os filtros
         cy.intercept('GET', '/web/index.php/api/v2/claim/employees/requests**')
             .as('reqGetClaimList')
         cy.get('.oxd-form-actions > .oxd-button--secondary').click()
