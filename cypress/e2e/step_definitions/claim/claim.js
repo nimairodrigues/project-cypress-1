@@ -63,6 +63,10 @@ And('selecionar o status {string}', (status) => {
     claimPage.selectStatus(status)
 })
 
+And('clicar no botão de atribuir reclamação', () => {
+    claimPage.clickAssignClaim()
+})
+
 Then('deve aparecer no resultado apenas o que estiver relacionado com o empregado selecionado', () => {
     cy.get('@nomeFormatado').then(nome => {
       claimPage.verifyEmployeeInTable(nome)
@@ -97,4 +101,20 @@ Then('deve aparecer no resultado apenas o que estiver relacionado com o status s
     cy.get('@statusSelected').then(statusSelected => {
         claimPage.verifyAllStatusInTableAreEqualTo(statusSelected)
     })
+})
+
+Then('deve ser redirecionado para a tela de criação de reclamação', () => {
+    createClaimPage.verifyUrl()
+})
+
+Then('deve mostrar o formulário de criação de reclamação', () => {
+    createClaimPage.verifyFormVisible()
+})
+
+Then('deve mostrar uma toast indicando que não foram encontrados resultados para os critérios de busca', () => {
+    claimPage.msgToastContains('No Records Found')
+})
+
+And('deve aparecer nos resultados mensagem indicando que não foram encontrados resultados', () => {
+    claimPage.verifyNoResultsFound()
 })

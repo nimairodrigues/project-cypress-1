@@ -18,7 +18,7 @@ class ClaimPage {
     }
 
     clickAssignClaim() {
-        cy.get('[class="orangehrm-paper-container"] [type="button"]').click()
+        cy.get('[class="oxd-button oxd-button--medium oxd-button--secondary"]').click()
     }
 
     typeEmployeeNameAndSelect(name) {
@@ -159,6 +159,14 @@ class ClaimPage {
         cy.get('[class="oxd-table-card"] [role="row"] [role="cell"]:nth-child(7) div').each(arr => {
             cy.wrap(arr.text()).should('be.equal', status)
         })
+    }
+
+    msgToastContains(textoToast) {
+        cy.get('[class="oxd-toast-container oxd-toast-container--bottom"]').should('contain', textoToast)
+    }
+
+    verifyNoResultsFound() {
+        cy.get('.orangehrm-horizontal-padding > .oxd-text').should('contain', 'No Records Found')
     }
 }
 
