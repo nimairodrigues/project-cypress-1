@@ -23,7 +23,6 @@ And('Tenho um usuário para utilizar', () => {
     menuPage.acessarOpcaoMenu('Admin')
     adminPage.criarUser('a', 'Enabled', 'juliano', 'senhaqualquer1')
     menuPage.acessarOpcaoMenu('Dashboard')
-    
 })
 
 // W H E N 
@@ -110,6 +109,10 @@ Then('Deve aparecer uma mensagem span embaixo de user role escrito {string}', te
 
 Then('Deve aparecer apenas usuarios admin na tabela', () => {
     adminPage.verificarUserRoleTable('Admin')
+})
+
+Then('Deve aparecer uma mensagem span embaixo de user role escrito {string}', textSpan => {
+    adminPage.textSpanUserRoleShouldBe(textSpan)
 })
 
 And('Deve aparecer uma mensagem span embaixo de employee name escrito {string}', textSpan => {

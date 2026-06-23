@@ -1,6 +1,6 @@
 Feature: Create Admin User
 
-    Scenario: CT-13 Criar novo usuário
+  Scenario: CT-13 Criar novo usuário
     Given Eu estou logado no sistema
     And Estou na tela de dashboard
     When Eu clicar em "Admin" na barra de menu
@@ -14,7 +14,7 @@ Feature: Create Admin User
     And Clicar no botão de salvar
     Then Deve aparecer um toast informando "Successfully Saved"
 
-    Scenario: CT-16 Criar novo usuário com username menor que 5 caracteres
+  Scenario: CT-16 Criar novo usuário com username menor que 5 caracteres
     Given Eu estou logado no sistema
     And Estou na tela de dashboard
     When Eu clicar em "Admin" na barra de menu
@@ -27,8 +27,8 @@ Feature: Create Admin User
     And Digitar no campo Confirm Password "senhaQualquer1"
     And Clicar no botão de salvar
     Then Deve aparecer uma mensagem span embaixo de username escrito "Should be at least 5 characters"
-   
-    Scenario: CT-17 Criar novo usuário com senha menor que 7 caracteres
+
+  Scenario: CT-17 Criar novo usuário com senha menor que 7 caracteres
     Given Eu estou logado no sistema
     And Estou na tela de dashboard
     When Eu clicar em "Admin" na barra de menu
@@ -42,7 +42,7 @@ Feature: Create Admin User
     And Clicar no botão de salvar
     Then Deve aparecer uma mensagem span embaixo de password escrito "Should have at least 7 characters"
 
-    Scenario: CT-18 Criar novo usuário com senha diferente na confirmação
+  Scenario: CT-18 Criar novo usuário com senha diferente na confirmação
     Given Eu estou logado no sistema
     And Estou na tela de dashboard
     When Eu clicar em "Admin" na barra de menu
@@ -56,7 +56,7 @@ Feature: Create Admin User
     And Clicar no botão de salvar
     Then Deve aparecer uma mensagem span embaixo de confirm password escrito "Passwords do not match"
 
-    Scenario: CT-19 Criar novo usuário sem nenhum dado
+  Scenario: CT-19 Criar novo usuário sem nenhum dado
     Given Eu estou logado no sistema
     And Estou na tela de dashboard
     When Eu clicar em "Admin" na barra de menu
@@ -69,7 +69,7 @@ Feature: Create Admin User
     And Deve aparecer uma mensagem span embaixo de password escrito "Required"
     And Deve aparecer uma mensagem span embaixo de confirm password escrito "Passwords do not match"
 
-    Scenario: CT-20 Criar novo usuário faltando preencher apenas o usuário e senha
+  Scenario: CT-20 Criar novo usuário faltando preencher apenas o usuário e senha
     Given Eu estou logado no sistema
     And Estou na tela de dashboard
     When Eu clicar em "Admin" na barra de menu
@@ -82,7 +82,7 @@ Feature: Create Admin User
     And Deve aparecer uma mensagem span embaixo de password escrito "Required"
     And Deve aparecer uma mensagem span embaixo de confirm password escrito "Passwords do not match"
 
-    Scenario: CT-21 Criar novo usuário faltando preencher apenas a senha
+  Scenario: CT-21 Criar novo usuário faltando preencher apenas a senha
     Given Eu estou logado no sistema
     And Estou na tela de dashboard
     When Eu clicar em "Admin" na barra de menu

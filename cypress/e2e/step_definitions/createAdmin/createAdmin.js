@@ -60,3 +60,23 @@ Then('Deve aparecer um toast informando {string}', textoToast => {
 Then('Deve aparecer uma mensagem span embaixo de username escrito {string}', textSpan => {
     adminPage.textSpanUsernameShouldBe(textSpan)
 })
+
+Then('Deve aparecer uma mensagem span embaixo de password escrito {string}', textSpan => {
+    adminPage.textSpanPasswordShouldBe(textSpan)
+})
+
+Then('Deve aparecer uma mensagem span embaixo de confirm password escrito {string}', textSpan => {
+    adminPage.textSpanConfirmPassShouldBe(textSpan)
+})
+
+Then('Deve aparecer uma mensagem span embaixo de user role escrito {string}', textSpan => {
+    adminPage.textSpanUserRoleShouldBe(textSpan)
+})
+
+Then('Deve aparecer uma mensagem span embaixo de employee name escrito {string}', textSpan => {
+    adminPage.textSpanEmployeeNameShouldBe(textSpan)
+})
+
+Then('Deve aparecer uma mensagem span embaixo de status escrito {string}', textSpan => {
+    adminPage.textSpanStatusShouldBe(textSpan)
+})
