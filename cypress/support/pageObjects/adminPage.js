@@ -66,7 +66,7 @@ class AdminPage {
     //Clicar no botão de salvar para adicionar o usuário
     clicarSalvar() {
         //Clicando no botão de salvar
-        cy.get('button:contains("Save")').click()
+        cy.get('.oxd-button--secondary').click()
     }
 
     //Verificando se a mensagem do toast contain o texto recebido no método
