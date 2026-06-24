@@ -6,7 +6,6 @@ class LoginPage {
 
     //Digitando no campo de username
     digitarUsername(username) {
-        cy.wait(2000)
         cy.get('[name=username]').should('be.visible').type(username)
     }
 
