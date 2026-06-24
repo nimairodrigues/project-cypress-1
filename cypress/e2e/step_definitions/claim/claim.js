@@ -8,7 +8,6 @@ import createClaimPage from '../../../support/pageObjects/createClaimPage'
 import menuPage from '../../../support/pageObjects/menuPage'
 
 Given('Eu estou logado no sistema', () => {
-    
     cy.acessarSistema()
     cy.logar('Admin', 'admin123')
     loginPage.isDashboardVisible()

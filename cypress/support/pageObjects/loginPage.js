@@ -6,17 +6,17 @@ class LoginPage {
 
     //Digitando no campo de username
     digitarUsername(username) {
-        cy.get('[name=username]').type(username)
+        cy.get('[name=username]').should('be.visible').type(username)
     }
 
     //Digitando no campo de password
     digitarPassword(password) {
-        cy.get('[name=password]').type(password)
+        cy.get('[name=password]').should('be.visible').type(password)
     }
 
     //Clicar no botão de login da tela de login
     clicarLogin() {
-        cy.get('button[type=submit]').click()
+        cy.get('button[type=submit]').should('be.visible').click()
     }
 
     //Método para realizar o login, recebendo username e password
