@@ -25,31 +25,6 @@ When('Eu clicar em {string} na barra de menu', menuOption => {
     menuPage.acessarOpcaoMenu(menuOption)
 })
 
-And('Clicar no botão de criar novo candidato', () => {
-    recruitmentPage.clicarBotãoNewCandidate()
-})
-
-And('Digitar no campo First Name o nome {string}', firstName => {
-    recruitmentPage.typeFirstNameField(firstName)
-})
-
-And('Digitar no campo Last Name o nome {string}', lastName => {
-    recruitmentPage.typeLastNameField(lastName)
-})
-
-And('Digitar no campo email o email {string}', email => {
-    recruitmentPage.typeEmailField(email)
-})
-
-And('Clicar no botão de salvar', () => {
-    recruitmentPage.clickSaveButton()
-})
-
-And('Selecionar opcao no campo Vacancy uma opcao qualquer', () => {
-    recruitmentPage.selectVacancyNumOption(4)
-})
-
-
 And('Clicar no ícone de lixeira de um candidato', () => {
     cy.get('@firstNameWritten').then(firstName => {
         recruitmentPage.clicarDeleteCandidatePerFirstName(firstName)
@@ -78,10 +53,6 @@ Then('Deve aparecer um toast informando {string}', msgToast => {
     recruitmentPage.msgToastContains(msgToast)
 })
 
-Then('Deve aparecer uma mensagem span embaixo de first name escrito {string}', msgSpan => {
-    recruitmentPage.textSpanFirstNameShouldBe(msgSpan)
-})
-
 Then('Deve aparecer apenas usuarios do job pesquisado na tabela', () => {
     cy.get('@jobNameWritten').then(jobNameWrittenn => {
         recruitmentPage.verificarJobsCandidateTable(jobNameWrittenn)
@@ -90,12 +61,4 @@ Then('Deve aparecer apenas usuarios do job pesquisado na tabela', () => {
 
 Then('Deve aparecer o perfil do candidato', () => {
     recruitmentPage.isProfileCandidateVisible()
-})
-
-And('Deve aparecer uma mensagem span embaixo de last name escrito {string}', msgSpan => {
-    recruitmentPage.textSpanLastNameShouldBe(msgSpan)
-})
-
-And('Deve aparecer uma mensagem span embaixo de email escrito {string}', msgSpan => {
-    recruitmentPage.textSpanEmailShouldBe(msgSpan)
 })
